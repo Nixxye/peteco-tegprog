@@ -29,5 +29,6 @@ namespace Gerenciadores
         static Gerenciador_Grafico* get_instancia();
         void mostrar();
         void limpar();
+        void fecharJanela();
     };
 }

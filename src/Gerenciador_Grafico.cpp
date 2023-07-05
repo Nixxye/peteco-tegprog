@@ -1,4 +1,5 @@
 #include "../Gerenciadores/Gerenciador_Grafico.h"
+#include "Gerenciador_Grafico.h"
 
 namespace Gerenciadores
 {
@@ -38,5 +39,10 @@ namespace Gerenciadores
     {
         if (get_JanelaAberta())
             janela->clear();
+    }
+    void Gerenciador_Grafico::fecharJanela()
+    {
+        if (get_JanelaAberta())
+            janela->close();       
     }
 }
