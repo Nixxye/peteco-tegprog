@@ -5,7 +5,6 @@
 #include "../Ente.h"
 
 //Fazer MEDIATOR
-//E singleton
 
 //Dimensões da janela
 #define LARGURA_TELA 800.0
@@ -30,5 +29,6 @@ namespace Gerenciadores
         void mostrar();
         void limpar();
         void fecharJanela();
+        sf::RenderWindow* get_Janela() const;
     };
 }

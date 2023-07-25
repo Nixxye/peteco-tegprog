@@ -1,5 +1,6 @@
 #include "../Gerenciadores/Gerenciador_Grafico.h"
-#include "Gerenciador_Grafico.h"
+
+#include <iostream>
 
 namespace Gerenciadores
 {
@@ -14,6 +15,7 @@ namespace Gerenciadores
     Gerenciador_Grafico::~Gerenciador_Grafico()
     {
         delete janela;
+        std::cout<<"B";
     }
     void Gerenciador_Grafico::desenharEnte(Ente *pE)
     {
@@ -45,4 +47,9 @@ namespace Gerenciadores
         if (get_JanelaAberta())
             janela->close();       
     }
+    sf::RenderWindow *Gerenciador_Grafico::get_Janela() const
+    {
+        return janela;
+    }
+
 }
