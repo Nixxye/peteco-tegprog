@@ -1,8 +1,9 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 
 #include "Gerenciadores/Gerenciador_Grafico.h"
+#include <SFML/Graphics.hpp>
+
 // Abstrata
 class Ente
 {

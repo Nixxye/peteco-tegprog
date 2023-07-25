@@ -5,6 +5,7 @@ namespace Entidades
     namespace Personagens
     {
         Jogador::Jogador():
+        Personagem(),
         pontos(0)
         {
 

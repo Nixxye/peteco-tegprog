@@ -1,4 +1,5 @@
 #include "../Gerenciadores/Gerenciador_Grafico.h"
+#include "../Ente.h"
 
 #include <iostream>
 

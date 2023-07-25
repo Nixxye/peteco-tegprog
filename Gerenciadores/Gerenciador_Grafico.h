@@ -2,8 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../Ente.h"
-
+class Ente;
 //Fazer MEDIATOR
 
 //Dimensões da janela

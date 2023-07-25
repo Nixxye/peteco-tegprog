@@ -19,5 +19,5 @@ const sf::RectangleShape* Ente::get_corpo() const
 }
 void Ente::desenhar()
 {
-    pGG->desenharEnte(this)
+    pGG->desenharEnte(this);
 }
