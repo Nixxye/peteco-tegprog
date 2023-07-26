@@ -8,7 +8,8 @@ namespace Fases
     class FasePrimeira: public Fase
     {
     private:
-
+    // Teste:
+        Entidades::Personagens::Jogador jogador1;
     public:
         FasePrimeira();
         ~FasePrimeira();

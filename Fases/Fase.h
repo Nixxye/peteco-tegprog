@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Ente.h"
+#include "../Entidades/Personagens/Jogador.h"
 
 namespace Fases
 {

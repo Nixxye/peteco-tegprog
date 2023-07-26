@@ -1,5 +1,5 @@
 #include "../Gerenciadores/Gerenciador_Grafico.h"
-#include "../Ente.h"
+#include "../Entidades/Entidade.h"
 
 #include <iostream>
 
@@ -18,7 +18,7 @@ namespace Gerenciadores
         delete janela;
         std::cout<<"B";
     }
-    void Gerenciador_Grafico::desenharEnte(Ente *pE)
+    void Gerenciador_Grafico::desenharEntidade(Entidades::Entidade *pE)
     {
         if (pE)
             janela->draw(*pE->get_corpo());

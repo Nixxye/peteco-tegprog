@@ -14,6 +14,7 @@ namespace Entidades
             Jogador();
             ~Jogador();
             void executar();
+            void mover();
         };
     }
 }

@@ -2,7 +2,8 @@
 #include <iostream>
 Jogo::Jogo():
 pGrafico(Gerenciadores::Gerenciador_Grafico::get_instancia()),
-pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia())
+pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
+fase1()
 {
     executar();
 }
@@ -20,6 +21,7 @@ void Jogo::executar()
     {
         pGrafico->limpar();
         pEventos->executar();
+        fase1.executar();
         pGrafico->mostrar();
     }
 }

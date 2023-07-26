@@ -3,7 +3,8 @@
 namespace Fases
 {
     FasePrimeira::FasePrimeira():
-    Fase()
+    Fase(),
+    jogador1()
     {
 
     }
@@ -14,6 +15,7 @@ namespace Fases
 
     void FasePrimeira::executar()
     {
-        
+        jogador1.executar();
+        jogador1.desenhar();
     }
 }
