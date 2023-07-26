@@ -8,7 +8,7 @@ namespace Entidades
         Personagem(),
         pontos(0)
         {
-
+            corpo.setFillColor(sf::Color::Red);
         }
         Jogador::~Jogador()
         {

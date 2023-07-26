@@ -6,7 +6,7 @@ namespace Fases
     Fase(),
     jogador1()
     {
-
+        criarCenario(ARQUIVO_CENARIO_1);
     }
     FasePrimeira::~FasePrimeira()
     {
@@ -17,5 +17,6 @@ namespace Fases
     {
         jogador1.executar();
         jogador1.desenhar();
+        obstaculos.desenhar();
     }
 }

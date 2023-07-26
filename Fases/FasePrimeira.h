@@ -2,6 +2,8 @@
 
 #include "Fase.h"
 
+#define ARQUIVO_CENARIO_1 "Design/Fase1/Cenario/cenario1.txt"
+
 namespace Fases
 {
     // Fase 1

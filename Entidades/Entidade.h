@@ -2,19 +2,18 @@
 
 #include "../Ente.h"
 
+// Largura e Altura padrão para as entidades
+#define TAM 50.f
+
 namespace Entidades
 {
     class Entidade: public Ente
     {
     protected:
-        sf::RectangleShape corpo;
         sf::Vector2f posicao;
     public:
-        Entidade();
+        Entidade(sf::Vector2f pos = sf::Vector2f(0.f, 0.f));
         ~Entidade();
-        // Era método da classe Ente:
-        void desenhar();
-        const sf::RectangleShape* get_corpo() const;
         virtual void executar() = 0;
     };
 }

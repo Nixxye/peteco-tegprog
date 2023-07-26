@@ -8,6 +8,8 @@ namespace Entidades
     {
     private:
     public:
+        Projetil();
+        ~Projetil();
         void executar();
     };
 }

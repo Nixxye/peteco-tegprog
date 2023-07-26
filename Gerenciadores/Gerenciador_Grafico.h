@@ -2,11 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace Entidades
-{
-    class Entidade;
-}
-//Fazer MEDIATOR
+class Ente;
 
 //Dimensões da janela
 #define LARGURA_TELA 800.0
@@ -16,6 +12,7 @@ namespace Entidades
 
 namespace Gerenciadores
 {
+    // Infraestrutura - SFML
     class Gerenciador_Grafico
     {
     private:
@@ -25,7 +22,7 @@ namespace Gerenciadores
     public:
         ~Gerenciador_Grafico();
 
-        void desenharEntidade(Entidades::Entidade* pE);
+        void desenharEnte(Ente* pE);
         const bool get_JanelaAberta() const;
         static Gerenciador_Grafico* get_instancia();
         void mostrar();

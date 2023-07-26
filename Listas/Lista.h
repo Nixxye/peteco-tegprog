@@ -77,5 +77,55 @@ namespace Listas
                 }
             }
             // VER SE VAMOS FAZER O ITERATOR OU N
+            // N fiz Iterator template -> ver se dá certo
+            class Iterador
+            {
+            private:
+                Elemento<TL>* atual;
+            public:
+                Iterador(Elemento<TL>* a = nullptr):
+                atual(a)
+                {
+
+                }
+                ~Iterador()
+                {
+                    atual = nullptr;
+                }
+                Iterador& operator++()
+                {
+                    atual = atual->get_pProx();
+                    return *this;
+                }
+                Iterador& operator++(int)
+                {
+                    atual = atual->get_pProx();
+                    return *this;
+                }
+                bool operator==(const Elemento<TL>* outro) const
+                {
+                    return atual == outro;
+                }
+                bool operator!=(const Elemento<TL>* outro) const
+                {
+                    return !(atual == outro);
+                }
+                void operator=(const Elemento<TL>* outro)
+                {
+                    atual = outro;
+                }
+                TL* operator*()
+                {
+                    return atual->get_pinfo();
+                }
+                const Elemento<TL>* get_atual() const
+                {
+                    return atual;
+                }
+            };
+            Iterador get_primeiro()
+            {
+                return Iterador(pPrimeiro);
+            }
     };
 }

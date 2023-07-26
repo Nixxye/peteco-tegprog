@@ -17,6 +17,11 @@ namespace Listas
     }
     void ListaEntidades::desenhar()
     {
-        
+        Lista<Entidades::Entidade>::Iterador aux = LEs.get_primeiro();
+        while (aux != nullptr)
+        {
+            (*aux)->desenhar();
+            aux++;
+        }
     }
 }
