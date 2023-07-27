@@ -23,7 +23,8 @@ namespace Listas
             ~Elemento()
             {
                 // deletar pinfo se for alocar com new.
-                pinfo = nullptr;
+                // pinfo = nullptr;
+                delete pinfo;
                 pProx = nullptr;
             }
             TE* get_pinfo() { return pinfo; }

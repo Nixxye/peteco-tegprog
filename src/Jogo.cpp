@@ -10,9 +10,10 @@ fase1()
 
 Jogo::~Jogo()
 {
-    pGrafico = nullptr;
-    pEventos = nullptr;
-  std::cout<<"C";  
+    delete pGrafico;
+    delete pEventos;
+    // pGrafico = nullptr;
+    // pEventos = nullptr;
 }
 
 void Jogo::executar()
