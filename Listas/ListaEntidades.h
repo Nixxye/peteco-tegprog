@@ -14,6 +14,7 @@ namespace Listas
         ListaEntidades();
         ~ListaEntidades();
         void incluir(Entidades::Entidade* pE);
+        const int get_tamanho() const;
         // void percorrer();
         void desenhar();
     };

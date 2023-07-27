@@ -1,5 +1,5 @@
 #include "../Listas/ListaEntidades.h"
-
+ 
 namespace Listas
 {
     ListaEntidades::ListaEntidades():
@@ -14,6 +14,10 @@ namespace Listas
     void ListaEntidades::incluir(Entidades::Entidade* pE)
     {
         LEs.incluir(pE);
+    }
+    const int ListaEntidades::get_tamanho() const
+    {
+        return LEs.get_tamanho();
     }
     void ListaEntidades::desenhar()
     {

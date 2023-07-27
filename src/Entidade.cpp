@@ -6,7 +6,7 @@ namespace Entidades
     Ente(sf::Vector2f(TAM, TAM)),
     posicao(pos)
     {
-
+        corpo.setPosition(posicao);
     }
     Entidade::~Entidade()
     {
