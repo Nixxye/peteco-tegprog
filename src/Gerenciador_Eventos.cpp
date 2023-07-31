@@ -25,16 +25,16 @@ namespace Gerenciadores
     void Gerenciador_Eventos::executar()
     {
         while (pGrafico->get_Janela()->pollEvent(evento))
-        switch (evento.type)
-        {
-        case sf::Event::Closed:
-            pGrafico->fecharJanela();
-            break;
-        case sf::Event::KeyPressed:
-            // Dica: Padrão observer.
-            break;
-        default:
-            break;
-        }
+            switch (evento.type)
+            {
+            case sf::Event::Closed:
+                pGrafico->fecharJanela();
+                break;
+            case sf::Event::KeyPressed:
+                // Dica: Padrão observer.
+                break;
+            default:
+                break;
+            }
     }
 }
