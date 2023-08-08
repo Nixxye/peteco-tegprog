@@ -79,6 +79,7 @@ namespace Listas
             }
             // VER SE VAMOS FAZER O ITERATOR OU N
             // N fiz Iterator template -> ver se dá certo
+            // Classe aninhada pública:
             class Iterador
             {
             private:
