@@ -3,8 +3,10 @@
 Jogo::Jogo():
 pGrafico(Gerenciadores::Gerenciador_Grafico::get_instancia()),
 pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
-fase1()
+fase1(),
+propaganda1()
 {
+    propaganda1.mostrarPropaganda();
     executar();
 }
 

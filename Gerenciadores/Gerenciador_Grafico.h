@@ -23,6 +23,8 @@ namespace Gerenciadores
         ~Gerenciador_Grafico();
 
         void desenharEnte(Ente* pE);
+        // Propaganda:
+        void desenharTextura(sf::Texture* pT);
         const bool get_JanelaAberta() const;
         static Gerenciador_Grafico* get_instancia();
         void mostrar();

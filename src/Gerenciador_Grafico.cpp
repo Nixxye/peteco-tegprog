@@ -23,6 +23,16 @@ namespace Gerenciadores
         if (pE)
             janela->draw(*pE->get_corpo());
     }
+    // Propaganda:
+    void Gerenciador_Grafico::desenharTextura(sf::Texture* pT)
+    {
+        if (pT)
+        {
+            sf::Sprite sprite;
+            sprite.setTexture(*pT);
+            janela->draw(sprite);
+        }
+    }
     const bool Gerenciador_Grafico::get_JanelaAberta() const
     {
         return janela->isOpen();

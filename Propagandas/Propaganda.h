@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <vector>
+#include <chrono>
+#include <thread>
+#include "../Gerenciadores/Gerenciador_Grafico.h"
 
 namespace Propagandas
 {
@@ -11,11 +14,12 @@ namespace Propagandas
     protected:
         std::vector<sf::Texture *> imgs;
         int n_imgs;
+        Gerenciadores::Gerenciador_Grafico* pGrafico;
         // Som???
     public:
-        Propaganda(const int n);
+        Propaganda();
         ~Propaganda();
-        void carregarImg(string caminho);
+        void carregarImg(std::string caminho);
         virtual void mostrarPropaganda() = 0;
     };
 }
