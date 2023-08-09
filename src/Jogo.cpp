@@ -1,5 +1,6 @@
 #include "../Jogo.h"
 #include <iostream>
+
 Jogo::Jogo():
 pGrafico(Gerenciadores::Gerenciador_Grafico::get_instancia()),
 pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
@@ -15,8 +16,6 @@ Jogo::~Jogo()
 {
     delete pGrafico;
     delete pEventos;
-    // pGrafico = nullptr;
-    // pEventos = nullptr;
 }
 
 void Jogo::executar()
