@@ -19,7 +19,7 @@ namespace Propagandas
     public:
         Propaganda();
         ~Propaganda();
-        void carregarImg(std::string caminho);
-        virtual void mostrarPropaganda() = 0;
+        bool carregarImg(std::string caminho);
+        void mostrarPropaganda(float time);
     };
 }

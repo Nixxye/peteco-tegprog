@@ -1,6 +1,7 @@
 #pragma once
 
 #include "LogoPeteco.h"
+#include "Karoshi.h"
 
 namespace Propagandas
 {
@@ -8,10 +9,11 @@ namespace Propagandas
     {
     private:
         LogoPeteco logo;
+        Karoshi karoshi;
         int n_propagandas;
     public:
-        LogoPeteco();
-        ~LogoPeteco();
+        GerenciadorPropagandas();
+        ~GerenciadorPropagandas();
         void mostrarPropaganda();
         void mostrarLogo();
     };

@@ -10,6 +10,5 @@ namespace Propagandas
     public:
         LogoPeteco();
         ~LogoPeteco();
-        void mostrarPropaganda();
     };
 }

@@ -16,16 +16,27 @@ namespace Propagandas
         imgs.clear();
         pGrafico = nullptr;
     }
-    void Propaganda::carregarImg(std::string caminho)
+    bool Propaganda::carregarImg(std::string caminho)
     {
         sf::Texture* aux = new sf::Texture;
         if (!aux->loadFromFile(caminho))
         {
             std::cout<<"Textura não carregada"<<std::endl;
             delete aux;
-            return;
+            return false;
         }
         imgs.push_back(aux);
-        n_imgs++;       
+        n_imgs++;  
+        return true;    
+    }
+    void Propaganda::mostrarPropaganda(float time)
+    {
+        for (int i = 0; i < n_imgs; i++)
+        {
+            pGrafico->limpar();
+            pGrafico->desenharTextura(imgs[i]);
+            pGrafico->mostrar();
+            std::this_thread::sleep_for(std::chrono::milliseconds((int) time / n_imgs));
+        }
     }
 }
