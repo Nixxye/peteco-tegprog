@@ -1,6 +1,8 @@
 #include "../Propagandas/Propaganda.h"
 #include <iostream>
 
+//.
+
 namespace Propagandas
 {
     Propaganda::Propaganda():
