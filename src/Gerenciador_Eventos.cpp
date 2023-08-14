@@ -14,7 +14,6 @@ namespace Gerenciadores
     Gerenciador_Eventos::~Gerenciador_Eventos()
     {
         pGrafico = nullptr;
-        std::cout<<"A";
     }
     Gerenciador_Eventos* Gerenciador_Eventos::get_instancia()
     {

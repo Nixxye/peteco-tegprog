@@ -11,7 +11,6 @@ namespace Fases
     {
     private:
     // Teste:
-        Entidades::Personagens::Jogador jogador1;
     public:
         FasePrimeira();
         ~FasePrimeira();

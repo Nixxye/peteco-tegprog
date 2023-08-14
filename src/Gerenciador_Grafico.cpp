@@ -16,7 +16,6 @@ namespace Gerenciadores
     Gerenciador_Grafico::~Gerenciador_Grafico()
     {
         delete janela;
-        std::cout<<"B";
     }
     void Gerenciador_Grafico::desenharEnte(Ente *pE)
     {

@@ -3,8 +3,7 @@
 namespace Fases
 {
     FasePrimeira::FasePrimeira():
-    Fase(),
-    jogador1()
+    Fase()
     {
         criarCenario(ARQUIVO_CENARIO_1);
     }
@@ -16,6 +15,7 @@ namespace Fases
     void FasePrimeira::executar()
     {
         jogador1.executar();
+        gerenciar_colisoes();
         jogador1.desenhar();
         obstaculos.desenhar();
     }

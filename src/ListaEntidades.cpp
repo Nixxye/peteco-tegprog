@@ -28,4 +28,9 @@ namespace Listas
             aux++;
         }
     }
+    Lista<Entidades::Entidade>::Iterador ListaEntidades::get_primeiro()
+    {
+        return LEs.get_primeiro();
+    }
+
 }

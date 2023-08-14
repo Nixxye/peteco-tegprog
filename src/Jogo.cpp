@@ -7,8 +7,6 @@ pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
 fase1(),
 propagandas()
 {
-    propagandas.mostrarLogo();
-    propagandas.mostrarPropaganda();
     executar();
 }
 

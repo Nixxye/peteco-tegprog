@@ -11,7 +11,10 @@ namespace Fases
     obstaculos(),
     inimigos()
     {
-
+        gC.set_inimigos(&inimigos);
+        gC.set_jogadores(&jogadores);
+        gC.set_obstaculos(&obstaculos);
+        criarJogadores();
     }
     Fase::~Fase()
     {
@@ -20,11 +23,11 @@ namespace Fases
 
     void Fase::gerenciar_colisoes()
     {
-
+        gC.colisao_simples();
     }
     void Fase::criarJogadores()
     {
-
+        jogadores.incluir(static_cast<Entidades::Entidade*>(&jogador1));
     }
     void Fase::criarInimMedios()
     {

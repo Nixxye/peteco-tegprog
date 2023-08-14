@@ -1,5 +1,7 @@
 #include "../Entidades/Entidade.h"
 
+#include <iostream>
+
 namespace Entidades
 {
     Entidade::Entidade(sf::Vector2f pos):
@@ -11,5 +13,9 @@ namespace Entidades
     Entidade::~Entidade()
     {
         
+    }
+    void Entidade::colidir()
+    {
+        std::cout<<"Colidindo"<<std::endl;
     }
 }

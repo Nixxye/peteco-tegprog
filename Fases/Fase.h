@@ -4,6 +4,7 @@
 #include "../Entidades/Personagens/Jogador.h"
 #include "../Entidades/Obstaculos/Obst_Facil.h"
 #include "../Listas/ListaEntidades.h"
+#include "../Gerenciadores/Gerenciador_Colisoes.h"
 
 namespace Fases
 {
@@ -13,7 +14,9 @@ namespace Fases
     protected:
         Listas::ListaEntidades jogadores;
         Listas::ListaEntidades obstaculos;
+        Entidades::Personagens::Jogador jogador1;
         Listas::ListaEntidades inimigos;
+        Gerenciadores::Gerenciador_Colisoes gC;
     public:
         Fase();
         ~Fase();
