@@ -14,7 +14,6 @@ namespace Fases
     protected:
         Listas::ListaEntidades jogadores;
         Listas::ListaEntidades obstaculos;
-        Entidades::Personagens::Jogador jogador1;
         Listas::ListaEntidades inimigos;
         Gerenciadores::Gerenciador_Colisoes gC;
     public:

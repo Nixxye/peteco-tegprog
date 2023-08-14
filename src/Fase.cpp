@@ -27,7 +27,7 @@ namespace Fases
     }
     void Fase::criarJogadores()
     {
-        jogadores.incluir(static_cast<Entidades::Entidade*>(&jogador1));
+        jogadores.incluir(static_cast<Entidades::Entidade*>(new Entidades::Personagens::Jogador()));
     }
     void Fase::criarInimMedios()
     {

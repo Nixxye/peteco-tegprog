@@ -14,9 +14,9 @@ namespace Fases
 
     void FasePrimeira::executar()
     {
-        jogador1.executar();
+        jogadores.executar();
         gerenciar_colisoes();
-        jogador1.desenhar();
+        jogadores.desenhar();
         obstaculos.desenhar();
     }
 }

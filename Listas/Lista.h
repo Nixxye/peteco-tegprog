@@ -1,5 +1,7 @@
 #pragma once
 
+// Como resolvemos o problema 
+
 namespace Listas
 {
     template<class TL>
@@ -22,9 +24,8 @@ namespace Listas
             }
             ~Elemento()
             {
-                // deletar pinfo se for alocar com new.
-                // pinfo = nullptr;
-                delete pinfo;
+                if (pinfo)
+                    delete pinfo;
                 pProx = nullptr;
             }
             TE* get_pinfo() { return pinfo; }
@@ -77,8 +78,6 @@ namespace Listas
                     tamanho++;
                 }
             }
-            // VER SE VAMOS FAZER O ITERATOR OU N
-            // N fiz Iterator template -> ver se dá certo
             // Classe aninhada pública:
             class Iterador
             {
