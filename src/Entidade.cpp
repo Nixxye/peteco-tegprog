@@ -16,6 +16,5 @@ namespace Entidades
     }
     void Entidade::colidir()
     {
-        std::cout<<"Colidindo"<<std::endl;
     }
 }

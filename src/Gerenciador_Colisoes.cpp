@@ -34,15 +34,19 @@ namespace Gerenciadores
             jgd++;
         }
     }
-    bool Gerenciador_Colisoes::colidiu(Entidades::Entidade* e1, Entidades::Entidade* e2)
+    int Gerenciador_Colisoes::colidiu(Entidades::Entidade* e1, Entidades::Entidade* e2)
     {
         sf::Vector2f pos1 = e1->getPosicao(), pos2 = e2->getPosicao(),
         tam1 = e1->getTamanho(), tam2 = e2->getTamanho(),
         d = pos2 - pos1;
 
         if (fabs(d.x) <= fabs(tam1.x + tam2.x) / 2 && fabs(d.y) <= fabs(tam1.y + tam2.y) / 2)
-            return true;
-        return false;
+        {
+            sf::Vector2f p_rel = pos1 - pos2;
+            if 
+        }
+
+        return 0;
     }
 
 }
