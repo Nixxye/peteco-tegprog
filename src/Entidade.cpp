@@ -6,8 +6,11 @@ namespace Entidades
 {
     Entidade::Entidade(sf::Vector2f pos):
     Ente(sf::Vector2f(TAM, TAM)),
-    posicao(pos)
+    posicao(pos),
+    nochao(false),
+    velocidade(sf::Vector2f(0.f, 0.f))
     {
+        // N sei se é necessário ter um atributo posição
         corpo.setPosition(posicao);
     }
     Entidade::~Entidade()
@@ -16,5 +19,9 @@ namespace Entidades
     }
     void Entidade::colidir()
     {
+    }
+    void Entidade::setPosicao(sf::Vector2f p)
+    {
+        corpo.setPosition(p);
     }
 }
