@@ -8,10 +8,12 @@ namespace Gerenciadores
     Gerenciador_Grafico* Gerenciador_Grafico::instancia(nullptr);
 
     Gerenciador_Grafico::Gerenciador_Grafico():
-    janela(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "PETECO-TEC_PROG"))
+    janela(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "PETECO-TEC_PROG")),
+    camera(sf::Vector2f(LARGURA_TELA / 2.f, ALTURA_TELA / 2.f), sf::Vector2f(LARGURA_TELA, ALTURA_TELA)) // posição e tamanho
     {
         //colocar estático como o murilo disse:
         janela->setFramerateLimit(60);
+        janela->setView(camera);
     }
     Gerenciador_Grafico::~Gerenciador_Grafico()
     {
@@ -61,5 +63,14 @@ namespace Gerenciadores
     {
         return janela;
     }
-
+    void Gerenciador_Grafico::resetarCamera()
+    {
+        camera.setCenter(sf::Vector2f(LARGURA_TELA / 2.f, ALTURA_TELA / 2.f));
+        janela->setView(camera);
+    }
+    void Gerenciador_Grafico::centralizarCamera(sf::Vector2f p)
+    {
+        camera.setCenter(p);
+        janela->setView(camera);        
+    }
 }

@@ -17,6 +17,7 @@ namespace Gerenciadores
     {
     private:
         sf::RenderWindow* janela;
+        sf::View camera;
         Gerenciador_Grafico();
         static Gerenciador_Grafico* instancia;
     public:
@@ -30,6 +31,8 @@ namespace Gerenciadores
         void mostrar();
         void limpar();
         void fecharJanela();
+        void resetarCamera();
+        void centralizarCamera(sf::Vector2f p);
         sf::RenderWindow* get_Janela() const;
     };
 }

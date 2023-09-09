@@ -16,6 +16,7 @@ namespace Fases
     {
         jogadores.executar();
         gerenciar_colisoes();
+        pGG->centralizarCamera((*(jogadores.get_primeiro()))->getPosicao());
         jogadores.desenhar();
         obstaculos.desenhar();
     }
