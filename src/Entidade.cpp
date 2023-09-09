@@ -24,4 +24,8 @@ namespace Entidades
     {
         corpo.setPosition(p);
     }
+    void Entidade::setVelocidade(sf::Vector2f v)
+    {
+        velocidade = v;
+    }
 }

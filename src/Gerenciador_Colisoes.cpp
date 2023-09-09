@@ -2,6 +2,8 @@
 #include <math.h>
 #include <iostream>
 
+#define CR 0.2
+
 namespace Gerenciadores
 {
     Gerenciador_Colisoes::Gerenciador_Colisoes():
@@ -38,25 +40,36 @@ namespace Gerenciadores
     {
         sf::Vector2f pos1 = e1->getPosicao(), pos2 = e2->getPosicao(),
         tam1 = e1->getTamanho(), tam2 = e2->getTamanho(),
-        d = pos2 - pos1,
-        c;
-        c.x = fabs(d.x) - (tam1.x + tam2.x) / 2;
-        c.y = fabs(d.y) - (tam1.y + tam1.y) / 2;
-        if (c.x < 0 && c.y < 0)
+        d(
+            fabs((pos1.x - pos2.x)) - ((tam1.x + tam2.x) / 2.f),
+            fabs((pos1.y - pos2.y)) - ((tam1.y + tam2.y) / 2.f)
+        );
+
+        if (d.x < 0 && d.y < 0)
         {
-            if (c.x > c.y)
+
+            // pq n é o contrário?????
+            if (d.x < d.y)
+            {
                 if (pos1.y <= pos2.y)
                 {
                     e1->setPosicao(sf::Vector2f(e1->getPosicao().x, e2->getPosicao().y - (tam1.y + tam2.y) / 2));
                     e1->setNochao(true);
                 }
                 else
-                    e1->setPosicao(sf::Vector2f(e1->getPosicao().x, e2->getPosicao().y + (tam1.y + tam2.y) / 2));
+                {
+                    e1->setPosicao(sf::Vector2f(e1->getPosicao().x, e2->getPosicao().y + (tam1.y + tam2.y) / 2));  
+                }
+                e1->setVelocidade(sf::Vector2f(e1->getVelocidade().x, -e1->getVelocidade().y * CR));
+            }
             else
+            {
                 if (pos1.x >= pos2.x)
                     e1->setPosicao(sf::Vector2f(e2->getPosicao().x + (tam1.x + tam2.x) / 2, e1->getPosicao().y));
                 else
                     e1->setPosicao(sf::Vector2f(e2->getPosicao().x - (tam1.x + tam2.x) / 2, e1->getPosicao().y));
+                e1->setVelocidade(sf::Vector2f(-e1->getVelocidade().x * CR, e1->getVelocidade().y));
+            }
         }
 
         return 0;
