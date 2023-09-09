@@ -4,6 +4,7 @@
 Jogo::Jogo():
 pGrafico(Gerenciadores::Gerenciador_Grafico::get_instancia()),
 pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
+pEstados(Gerenciadores::Gerenciador_Estados::get_instancia()),
 fase1(),
 propagandas()
 {
@@ -14,6 +15,7 @@ Jogo::~Jogo()
 {
     delete pGrafico;
     delete pEventos;
+    delete pEstados;
 }
 
 void Jogo::executar()
@@ -22,7 +24,7 @@ void Jogo::executar()
     {
         pGrafico->limpar();
         pEventos->executar();
-        fase1.executar();
+        pEstados->executar();
         pGrafico->mostrar();
     }
 }

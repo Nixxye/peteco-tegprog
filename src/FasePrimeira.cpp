@@ -1,23 +1,26 @@
-#include "../Fases/FasePrimeira.h"
+#include "../Estados/Fases/FasePrimeira.h"
 
-namespace Fases
+namespace Estados
 {
-    FasePrimeira::FasePrimeira():
-    Fase()
+    namespace Fases
     {
-        criarCenario(ARQUIVO_CENARIO_1);
-    }
-    FasePrimeira::~FasePrimeira()
-    {
+        FasePrimeira::FasePrimeira():
+        Fase(1)
+        {
+            criarCenario(ARQUIVO_CENARIO_1);
+        }
+        FasePrimeira::~FasePrimeira()
+        {
 
-    }
+        }
 
-    void FasePrimeira::executar()
-    {
-        jogadores.executar();
-        gerenciar_colisoes();
-        pGG->centralizarCamera((*(jogadores.get_primeiro()))->getPosicao());
-        jogadores.desenhar();
-        obstaculos.desenhar();
-    }
+        void FasePrimeira::executar()
+        {
+            jogadores.executar();
+            gerenciar_colisoes();
+            pGG->centralizarCamera((*(jogadores.get_primeiro()))->getPosicao());
+            jogadores.desenhar();
+            obstaculos.desenhar();
+        }
+    }    
 }
