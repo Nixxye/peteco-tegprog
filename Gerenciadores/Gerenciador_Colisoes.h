@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../Listas/ListaEntidades.h"
-// Ver se há outra maneira de usar o iterator sem incluir a Lista original e apenas a Lista de Entidades.
 #include "../Listas/Lista.h"
 #include "../Entidades/Entidade.h"
 

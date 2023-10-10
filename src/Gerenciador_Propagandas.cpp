@@ -16,7 +16,6 @@ namespace Propagandas
     }
     void GerenciadorPropagandas::mostrarPropaganda()
     {
-        // random e switch case:
         karoshi.mostrarPropaganda(5000);
     }
     void GerenciadorPropagandas::mostrarLogo()

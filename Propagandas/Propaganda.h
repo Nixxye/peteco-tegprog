@@ -15,7 +15,6 @@ namespace Propagandas
         std::vector<sf::Texture *> imgs;
         int n_imgs;
         Gerenciadores::Gerenciador_Grafico* pGrafico;
-        // Som???
     public:
         Propaganda();
         ~Propaganda();

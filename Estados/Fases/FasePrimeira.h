@@ -12,7 +12,6 @@ namespace Estados
         class FasePrimeira: public Fase
         {
         private:
-        // Teste:
         public:
             FasePrimeira();
             ~FasePrimeira();

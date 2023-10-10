@@ -62,6 +62,8 @@ namespace Estados
                         if (aux)
                             obstaculos.incluir(aux);
                         break;
+                    default:
+                        break;
                     }
                     j++;
                 }

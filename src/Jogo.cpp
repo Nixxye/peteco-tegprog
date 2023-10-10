@@ -20,6 +20,8 @@ Jogo::~Jogo()
 
 void Jogo::executar()
 {
+    propagandas.mostrarLogo();
+    propagandas.mostrarPropaganda();
     while (pGrafico->get_JanelaAberta())
     {
         pGrafico->limpar();

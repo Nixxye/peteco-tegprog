@@ -1,7 +1,5 @@
 #pragma once
 
-// Como resolvemos o problema 
-
 namespace Listas
 {
     template<class TL>

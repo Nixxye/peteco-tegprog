@@ -11,7 +11,6 @@ namespace Gerenciadores
     janela(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "PETECO-TEC_PROG")),
     camera(sf::Vector2f(LARGURA_TELA / 2.f, ALTURA_TELA / 2.f), sf::Vector2f(LARGURA_TELA, ALTURA_TELA)) // posição e tamanho
     {
-        //colocar estático como o murilo disse:
         janela->setFramerateLimit(60);
         janela->setView(camera);
     }

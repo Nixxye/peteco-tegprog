@@ -17,7 +17,7 @@ namespace Entidades
         Entidade(sf::Vector2f pos = sf::Vector2f(0.f, 0.f));
         ~Entidade();
         // Se for virtual puro n dá para fazer o cast (n sei o pq);
-        virtual void executar() {}
+        virtual void executar()=0;
         // Colocar a entidade com a qual colidiu para fazer mais ações:
         virtual void colidir();
         const sf::Vector2f getPosicao() const { return corpo.getPosition(); }

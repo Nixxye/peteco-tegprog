@@ -10,7 +10,6 @@ namespace Entidades
     nochao(false),
     velocidade(sf::Vector2f(0.f, 0.f))
     {
-        // N sei se é necessário ter um atributo posição
         corpo.setPosition(posicao);
     }
     Entidade::~Entidade()

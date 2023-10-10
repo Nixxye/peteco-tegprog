@@ -48,7 +48,6 @@ namespace Gerenciadores
         if (d.x < 0 && d.y < 0)
         {
 
-            // pq n é o contrário?????
             if (d.x < d.y)
             {
                 if (pos1.y <= pos2.y)
