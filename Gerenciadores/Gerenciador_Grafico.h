@@ -16,17 +16,12 @@ namespace Gerenciadores
     class Gerenciador_Grafico
     {
     private:
-<<<<<<< HEAD
-=======
-        sf::RenderWindow* janela;
-        sf::View camera;
->>>>>>> main
         Gerenciador_Grafico();
         sf::RenderWindow* janela;
+        sf::View camera;
         static Gerenciador_Grafico* instancia;
     public:
         ~Gerenciador_Grafico();
-
         void desenharEnte(Ente* pE);
         // Propaganda:
         void desenharTextura(sf::Texture* pT);

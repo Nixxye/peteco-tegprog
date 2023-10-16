@@ -12,7 +12,8 @@ namespace Entidades
         private:
 
         public:
-            void executar();
+            void atualizar();
+            void mover();
         };
     }
 }

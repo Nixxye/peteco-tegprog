@@ -16,23 +16,23 @@ namespace Entidades
     {
         
     }
-<<<<<<< HEAD
-
     void Entidade::executar()
     {
         this->mover();
         this->atualizar();
-=======
+    }
+
     void Entidade::colidir()
     {
     }
+    
     void Entidade::setPosicao(sf::Vector2f p)
     {
         corpo.setPosition(p);
     }
+    
     void Entidade::setVelocidade(sf::Vector2f v)
     {
         velocidade = v;
->>>>>>> main
     }
 }
