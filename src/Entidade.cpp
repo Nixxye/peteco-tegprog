@@ -12,4 +12,10 @@ namespace Entidades
     {
         
     }
+
+    void Entidade::executar()
+    {
+        this->mover();
+        this->atualizar();
+    }
 }

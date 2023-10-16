@@ -11,7 +11,8 @@ namespace Entidades
         protected:
             int nivel_maldade;
         public:
-            virtual void executar();
+            virtual void mover() = 0;
+            virtual void atualizar() = 0;
         };
     }
 }

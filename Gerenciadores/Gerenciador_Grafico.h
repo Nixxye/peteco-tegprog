@@ -16,8 +16,8 @@ namespace Gerenciadores
     class Gerenciador_Grafico
     {
     private:
-        sf::RenderWindow* janela;
         Gerenciador_Grafico();
+        sf::RenderWindow* janela;
         static Gerenciador_Grafico* instancia;
     public:
         ~Gerenciador_Grafico();

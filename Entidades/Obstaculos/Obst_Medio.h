@@ -13,7 +13,8 @@ namespace Entidades
         public:
             Obst_Medio();
             ~Obst_Medio();
-            void executar();
+            void atualizar();
+            void mover();
         };
     }
 }

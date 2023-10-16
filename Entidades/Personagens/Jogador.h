@@ -13,7 +13,7 @@ namespace Entidades
         public:
             Jogador();
             ~Jogador();
-            void executar();
+            void atualizar();
             void mover();
         };
     }

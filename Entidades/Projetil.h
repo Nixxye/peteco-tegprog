@@ -10,6 +10,7 @@ namespace Entidades
     public:
         Projetil();
         ~Projetil();
-        void executar();
+        void mover();
+        void atualizar();
     };
 }

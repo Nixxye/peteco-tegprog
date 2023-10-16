@@ -9,13 +9,20 @@ namespace Entidades
         {
 
         }
+        
         Obst_Facil::~Obst_Facil()
         {
 
         }
-        void Obst_Facil::executar()
+
+        void Obst_Facil::atualizar()
         {
-            
+
+        }
+
+        void Obst_Facil::mover()
+        {
+
         }
     }
 }

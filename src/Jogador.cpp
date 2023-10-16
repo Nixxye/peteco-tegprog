@@ -14,10 +14,12 @@ namespace Entidades
         {
 
         }
-        void Jogador::executar()
+
+        void Jogador::atualizar()
         {
-            mover();
+            corpo.setPosition(posicao);
         }
+
         void Jogador::mover()
         {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
@@ -28,7 +30,6 @@ namespace Entidades
                 posicao += sf::Vector2f(0, -1.f);    
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
                 posicao += sf::Vector2f(0, 1.f);       
-            corpo.setPosition(posicao);
         }
     }
 }
