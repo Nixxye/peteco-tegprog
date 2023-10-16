@@ -1,10 +1,13 @@
 #include "../Jogo.h"
 #include <iostream>
+
 Jogo::Jogo():
 pGrafico(Gerenciadores::Gerenciador_Grafico::get_instancia()),
 pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
-fase1()
+pEstados(Gerenciadores::Gerenciador_Estados::get_instancia()),
+propagandas()
 {
+    Estados::Fases::FasePrimeira* fase1 = new Estados::Fases::FasePrimeira();
     executar();
 }
 
@@ -12,17 +15,18 @@ Jogo::~Jogo()
 {
     delete pGrafico;
     delete pEventos;
-    // pGrafico = nullptr;
-    // pEventos = nullptr;
+    delete pEstados;
 }
 
 void Jogo::executar()
 {
+    propagandas.mostrarLogo();
+    propagandas.mostrarPropaganda();
     while (pGrafico->get_JanelaAberta())
     {
         pGrafico->limpar();
         pEventos->executar();
-        fase1.executar();
+        pEstados->executar();
         pGrafico->mostrar();
     }
 }

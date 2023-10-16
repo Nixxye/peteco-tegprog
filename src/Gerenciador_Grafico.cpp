@@ -8,20 +8,30 @@ namespace Gerenciadores
     Gerenciador_Grafico* Gerenciador_Grafico::instancia(nullptr);
 
     Gerenciador_Grafico::Gerenciador_Grafico():
-    janela(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "PETECO-TEC_PROG"))
+    janela(new sf::RenderWindow(sf::VideoMode(LARGURA_TELA, ALTURA_TELA), "PETECO-TEC_PROG")),
+    camera(sf::Vector2f(LARGURA_TELA / 2.f, ALTURA_TELA / 2.f), sf::Vector2f(LARGURA_TELA, ALTURA_TELA)) // posição e tamanho
     {
-        //colocar estático como o murilo disse:
         janela->setFramerateLimit(60);
+        janela->setView(camera);
     }
     Gerenciador_Grafico::~Gerenciador_Grafico()
     {
         delete janela;
-        std::cout<<"B";
     }
     void Gerenciador_Grafico::desenharEnte(Ente *pE)
     {
         if (pE)
             janela->draw(*pE->get_corpo());
+    }
+    // Propaganda:
+    void Gerenciador_Grafico::desenharTextura(sf::Texture* pT)
+    {
+        if (pT)
+        {
+            sf::Sprite sprite;
+            sprite.setTexture(*pT);
+            janela->draw(sprite);
+        }
     }
     const bool Gerenciador_Grafico::get_JanelaAberta() const
     {
@@ -52,5 +62,14 @@ namespace Gerenciadores
     {
         return janela;
     }
-
+    void Gerenciador_Grafico::resetarCamera()
+    {
+        camera.setCenter(sf::Vector2f(LARGURA_TELA / 2.f, ALTURA_TELA / 2.f));
+        janela->setView(camera);
+    }
+    void Gerenciador_Grafico::centralizarCamera(sf::Vector2f p)
+    {
+        camera.setCenter(p);
+        janela->setView(camera);        
+    }
 }

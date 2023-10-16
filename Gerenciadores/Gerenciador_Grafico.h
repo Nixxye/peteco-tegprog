@@ -16,6 +16,11 @@ namespace Gerenciadores
     class Gerenciador_Grafico
     {
     private:
+<<<<<<< HEAD
+=======
+        sf::RenderWindow* janela;
+        sf::View camera;
+>>>>>>> main
         Gerenciador_Grafico();
         sf::RenderWindow* janela;
         static Gerenciador_Grafico* instancia;
@@ -23,11 +28,15 @@ namespace Gerenciadores
         ~Gerenciador_Grafico();
 
         void desenharEnte(Ente* pE);
+        // Propaganda:
+        void desenharTextura(sf::Texture* pT);
         const bool get_JanelaAberta() const;
         static Gerenciador_Grafico* get_instancia();
         void mostrar();
         void limpar();
         void fecharJanela();
+        void resetarCamera();
+        void centralizarCamera(sf::Vector2f p);
         sf::RenderWindow* get_Janela() const;
     };
 }

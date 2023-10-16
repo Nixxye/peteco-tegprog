@@ -17,19 +17,24 @@ namespace Entidades
 
         void Jogador::atualizar()
         {
-            corpo.setPosition(posicao);
+            corpo.setPosition(corpo.getPosition() + velocidade);
         }
 
         void Jogador::mover()
         {
+            if (!nochao)
+                velocidade += sf::Vector2f(0, 0.1);  
+            else
+                velocidade = sf::Vector2f(velocidade.x, 0.f);
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-                posicao += sf::Vector2f(1.f, 0);
+                velocidade += sf::Vector2f(0.1, 0);
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-                posicao += sf::Vector2f(-1.f, 0);   
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-                posicao += sf::Vector2f(0, -1.f);    
+                velocidade += sf::Vector2f(-0.1, 0);   
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && nochao)
+                velocidade += sf::Vector2f(0, -5.f);    
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-                posicao += sf::Vector2f(0, 1.f);       
+                velocidade += sf::Vector2f(0, 0.1);  
+            nochao = false;
         }
     }
 }

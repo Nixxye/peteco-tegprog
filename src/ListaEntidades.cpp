@@ -28,4 +28,18 @@ namespace Listas
             aux++;
         }
     }
+    void ListaEntidades::executar()
+    {
+        Lista<Entidades::Entidade>::Iterador aux = LEs.get_primeiro();
+        while (aux != nullptr)
+        {
+            (*aux)->executar();
+            aux++;
+        }        
+    }
+    Lista<Entidades::Entidade>::Iterador ListaEntidades::get_primeiro()
+    {
+        return LEs.get_primeiro();
+    }
+
 }

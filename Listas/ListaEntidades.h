@@ -17,5 +17,7 @@ namespace Listas
         const int get_tamanho() const;
         // void percorrer();
         void desenhar();
+        void executar();
+        Lista<Entidades::Entidade>::Iterador get_primeiro();
     };
 }
