@@ -30,7 +30,7 @@ namespace Gerenciadores
         const bool get_JanelaAberta() const;
         /*
             Método estático que controla o acessor à instância singleton.
-            Na primeira vez um objeto é criado e colocado no atributo estático instância,
+            Na primeira vez um objeto é criado e colocado no atributo estático "instância",
             nas próximas ele retorna a instância.
         */
         static Gerenciador_Grafico* get_instancia();

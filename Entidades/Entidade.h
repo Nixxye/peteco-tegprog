@@ -7,6 +7,7 @@
 
 namespace Entidades
 {
+    // Template Method - Design Pattern
     class Entidade: public Ente
     {
     protected:

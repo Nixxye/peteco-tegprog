@@ -5,6 +5,7 @@
 
 namespace Observers
 {
+    // Observer Design Pattern
     class Observer
     {
     protected:
