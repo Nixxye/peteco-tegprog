@@ -7,6 +7,7 @@
 #include "Gerenciadores/Gerenciador_Estados.h"
 #include "Estados/Fases/FasePrimeira.h"
 #include "Propagandas/Gerenciador_Propagandas.h"
+#include "Observers/ObserverTecla.h"
 
 class Jogo
 {
@@ -15,6 +16,10 @@ private:
     Gerenciadores::Gerenciador_Eventos* pEventos;
     Gerenciadores::Gerenciador_Estados* pEstados;
     Propagandas::GerenciadorPropagandas propagandas;
+    // Comentar dps:
+    Observers::ObserverTecla obs1;
+    Observers::ObserverTecla obs2;
+    
 public:
     Jogo();
     ~Jogo();

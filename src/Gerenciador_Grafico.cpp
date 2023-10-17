@@ -5,6 +5,7 @@
 
 namespace Gerenciadores
 {
+    // Inicializar o atributo estático fora da classe.
     Gerenciador_Grafico* Gerenciador_Grafico::instancia(nullptr);
 
     Gerenciador_Grafico::Gerenciador_Grafico():
@@ -37,6 +38,7 @@ namespace Gerenciadores
     {
         return janela->isOpen();
     }
+    // Padrão Singleton.
     Gerenciador_Grafico *Gerenciador_Grafico::get_instancia()
     {
         if (!instancia)

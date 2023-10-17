@@ -2,6 +2,7 @@
 
 namespace Listas
 {
+    // Classe container para padrão Iterator:
     template<class TL>
     class Lista
     {
@@ -77,6 +78,7 @@ namespace Listas
                 }
             }
             // Classe aninhada pública:
+            // Iterator - Design Pattern:
             class Iterador
             {
             private:
