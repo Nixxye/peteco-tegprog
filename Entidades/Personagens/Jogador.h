@@ -15,6 +15,7 @@ namespace Entidades
             ~Jogador();
             void atualizar();
             void mover();
+            void salvar(std::ostringstream* entrada);
         };
     }
 }

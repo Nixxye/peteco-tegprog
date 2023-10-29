@@ -15,6 +15,5 @@ namespace Observers
     }
     void ObserverTecla::atualizar(sf::Keyboard::Key k)
     {
-        std::cout << "Observer " << num << " - " << k << std::endl;
     }
 }

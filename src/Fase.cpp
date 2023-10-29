@@ -12,7 +12,9 @@ namespace Estados
         jogadores(),
         obstaculos(),
         inimigos(),
-        Estado(i)
+        Estado(i),
+        gC(),
+        gS()
         {
             gC.set_inimigos(&inimigos);
             gC.set_jogadores(&jogadores);
@@ -21,7 +23,8 @@ namespace Estados
         }
         Fase::~Fase()
         {
-
+            salvar();
+            gS.salvar("jogador.json");
         }
 
         void Fase::gerenciar_colisoes()
@@ -69,6 +72,11 @@ namespace Estados
                 }
             }
             arquivo.close();
+        }
+        void Fase::salvar()
+        {
+            Listas::Lista<Entidades::Entidade>::Iterador j = jogadores.get_primeiro();
+            (*j)->salvar(gS.getBuffer());
         }
     }
 }

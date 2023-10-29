@@ -6,6 +6,7 @@
 #include "../../Listas/ListaEntidades.h"
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
 #include "../Estado.h"
+#include "../../Gerenciadores/Gerenciador_Salvamento.h"
 
 namespace Estados
 {
@@ -19,6 +20,7 @@ namespace Estados
             Listas::ListaEntidades obstaculos;
             Listas::ListaEntidades inimigos;
             Gerenciadores::Gerenciador_Colisoes gC;
+            Gerenciadores::Gerenciador_Salvamento gS;
         public:
             Fase(int i = - 1);
             ~Fase();
@@ -27,6 +29,7 @@ namespace Estados
             void gerenciar_colisoes();
             void criarJogadores();
             void criarInimMedios();
+            void salvar();
             // Substituído
             // void criarObstMedios();
             void criarCenario(std::string caminho);

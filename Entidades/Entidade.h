@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Ente.h"
+#include <sstream>
 
 // Largura e Altura padrão para as entidades
 #define TAM 50.f
@@ -17,6 +18,11 @@ namespace Entidades
     public:
         Entidade(sf::Vector2f pos = sf::Vector2f(0.f, 0.f));
         ~Entidade();
+
+        virtual void salvar(std::ostringstream* entrada)
+        {
+            
+        }
         void executar();
         virtual void mover() = 0;
         virtual void atualizar() = 0;
