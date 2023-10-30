@@ -5,6 +5,7 @@
 #include <iostream>
 
 #define ARQUIVO_JOGADOR "jogador.json"
+#define ARQUIVO_INIMIGO "inimigo.json"
 
 namespace Estados
 {
@@ -22,6 +23,7 @@ namespace Estados
             gC.set_jogadores(&jogadores);
             gC.set_obstaculos(&obstaculos);
             criarJogadores();
+            criarInimigos();
         }
         Fase::~Fase()
         {
@@ -58,9 +60,30 @@ namespace Estados
             }
             
         }
-        void Fase::criarInimMedios()
+        void Fase::criarInimigos()
         {
+            std::ifstream arquivo(ARQUIVO_INIMIGO);
+            if (!arquivo)
+            {
+                std::cout << "Arquivo não existe" << std::endl;   
+                exit(2);
+            }
 
+            nlohmann::json json = nlohmann::json::parse(arquivo);
+
+            for (auto it = json.begin(); it != json.end(); ++it)
+            {
+                inimigos.incluir(static_cast<Entidades::Entidade*>(new Entidades::Personagens::Inim_Facil(
+                    sf::Vector2f(
+                        (float) ((*it)["posicao"][0]), 
+                        (float) ((*it)["posicao"][1])
+                                ),
+                    sf::Vector2f(
+                        (float) ((*it)["velocidade"][0]),
+                        (float) ((*it)["velocidade"][1])
+                                )
+                    )));
+            }
         }
         void Fase::criarCenario(std::string caminho)
         {
@@ -98,6 +121,7 @@ namespace Estados
         }
         void Fase::salvar()
         {
+            // Salvando Jogadores:
             std::ofstream arquivo(ARQUIVO_JOGADOR);  
             if (!arquivo)
             {
@@ -108,8 +132,14 @@ namespace Estados
             Listas::Lista<Entidades::Entidade>::Iterador j = jogadores.get_primeiro();
             buffer.str("");
             buffer << "[";
+            if (j != nullptr)
+            {
+                (*j)->salvar(&buffer);
+                j++;
+            }
             while (j != nullptr)
             {
+                buffer << ",";
                 (*j)->salvar(&buffer);
                 j++;
             }
@@ -118,6 +148,34 @@ namespace Estados
             arquivo << buffer.str();
 
             arquivo.close();
+            // Salvando inimigos: 
+
+            std::ofstream arquivo_inimigo(ARQUIVO_INIMIGO);  
+            if (!arquivo_inimigo)
+            {
+                std::cout << "Problema em salvar o arquivo" << std::endl;
+                exit(1);
+            }
+
+            Listas::Lista<Entidades::Entidade>::Iterador i = inimigos.get_primeiro();
+            buffer.str("");
+            buffer << "[";
+            if (i != nullptr)
+            {
+                (*i)->salvar(&buffer);
+                i++;
+            }
+            while (i != nullptr)
+            {
+                buffer << ",";
+                (*i)->salvar(&buffer);
+                i++;
+            }
+            buffer << "]";
+
+            arquivo_inimigo << buffer.str();
+
+            arquivo_inimigo.close();
         }
     }
 }

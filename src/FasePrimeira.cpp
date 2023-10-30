@@ -17,9 +17,11 @@ namespace Estados
         void FasePrimeira::executar()
         {
             jogadores.executar();
+            inimigos.executar();
             gerenciar_colisoes();
             pGG->centralizarCamera((*(jogadores.get_primeiro()))->getPosicao());
             jogadores.desenhar();
+            inimigos.desenhar();
             obstaculos.desenhar();
         }
     }    

@@ -35,6 +35,22 @@ namespace Gerenciadores
             }
             jgd++;
         }
+        
+        Listas::Lista<Entidades::Entidade>::Iterador inim = inimigos->get_primeiro();
+        while (inim != nullptr)
+        {
+            obst = obstaculos->get_primeiro();
+            while (obst != nullptr)
+            {
+                if (colidiu(*inim, *obst))
+                {
+                    (*inim)->colidir();
+                    (*obst)->colidir();
+                }
+                obst++;
+            }
+            inim++;
+        }
     }
     int Gerenciador_Colisoes::colidiu(Entidades::Entidade* e1, Entidades::Entidade* e2)
     {

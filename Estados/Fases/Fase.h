@@ -2,6 +2,7 @@
 
 #include "../../Entidades/Entidade.h"
 #include "../../Entidades/Personagens/Jogador.h"
+#include "../../Entidades/Personagens/Inim_Facil.h"
 #include "../../Entidades/Obstaculos/Obst_Facil.h"
 #include "../../Listas/ListaEntidades.h"
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
@@ -32,7 +33,7 @@ namespace Estados
             virtual void executar() = 0;
             void gerenciar_colisoes();
             void criarJogadores();
-            void criarInimMedios();
+            void criarInimigos();
             void salvar();
             // Substituído
             // void criarObstMedios();
