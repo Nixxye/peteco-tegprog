@@ -6,7 +6,11 @@
 #include "../../Listas/ListaEntidades.h"
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
 #include "../Estado.h"
-#include "../../Gerenciadores/Gerenciador_Salvamento.h"
+
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include "json.hpp"
 
 namespace Estados
 {
@@ -20,7 +24,7 @@ namespace Estados
             Listas::ListaEntidades obstaculos;
             Listas::ListaEntidades inimigos;
             Gerenciadores::Gerenciador_Colisoes gC;
-            Gerenciadores::Gerenciador_Salvamento gS;
+            std::ostringstream buffer;
         public:
             Fase(int i = - 1);
             ~Fase();

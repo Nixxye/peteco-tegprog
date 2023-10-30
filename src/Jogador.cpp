@@ -4,8 +4,8 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Jogador::Jogador():
-        Personagem(),
+        Jogador::Jogador(sf::Vector2f pos, sf::Vector2f vel):
+        Personagem(pos, vel),
         pontos(0)
         {
             corpo.setFillColor(sf::Color::Red);

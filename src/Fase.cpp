@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+#define ARQUIVO_JOGADOR "jogador.json"
+
 namespace Estados
 {
     namespace Fases
@@ -14,7 +16,7 @@ namespace Estados
         inimigos(),
         Estado(i),
         gC(),
-        gS()
+        buffer()
         {
             gC.set_inimigos(&inimigos);
             gC.set_jogadores(&jogadores);
@@ -24,7 +26,6 @@ namespace Estados
         Fase::~Fase()
         {
             salvar();
-            gS.salvar("jogador.json");
         }
 
         void Fase::gerenciar_colisoes()
@@ -33,7 +34,29 @@ namespace Estados
         }
         void Fase::criarJogadores()
         {
-            jogadores.incluir(static_cast<Entidades::Entidade*>(new Entidades::Personagens::Jogador()));
+            std::ifstream arquivo(ARQUIVO_JOGADOR);
+            if (!arquivo)
+            {
+                std::cout << "Arquivo não existe" << std::endl;   
+                exit(2);
+            }
+
+            nlohmann::json json = nlohmann::json::parse(arquivo);
+
+            for (auto it = json.begin(); it != json.end(); ++it)
+            {
+                jogadores.incluir(static_cast<Entidades::Entidade*>(new Entidades::Personagens::Jogador(
+                    sf::Vector2f(
+                        (float) ((*it)["posicao"][0]), 
+                        (float) ((*it)["posicao"][1])
+                                ),
+                    sf::Vector2f(
+                        (float) ((*it)["velocidade"][0]),
+                        (float) ((*it)["velocidade"][1])
+                                )
+                    )));
+            }
+            
         }
         void Fase::criarInimMedios()
         {
@@ -75,8 +98,26 @@ namespace Estados
         }
         void Fase::salvar()
         {
+            std::ofstream arquivo(ARQUIVO_JOGADOR);  
+            if (!arquivo)
+            {
+                std::cout << "Problema em salvar o arquivo" << std::endl;
+                exit(1);
+            }
+
             Listas::Lista<Entidades::Entidade>::Iterador j = jogadores.get_primeiro();
-            (*j)->salvar(gS.getBuffer());
+            buffer.str("");
+            buffer << "[";
+            while (j != nullptr)
+            {
+                (*j)->salvar(&buffer);
+                j++;
+            }
+            buffer << "]";
+
+            arquivo << buffer.str();
+
+            arquivo.close();
         }
     }
 }
