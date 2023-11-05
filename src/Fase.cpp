@@ -17,17 +17,21 @@ namespace Estados
         inimigos(),
         Estado(i),
         gC(),
-        buffer()
+        buffer(),
+        IThread(NULL)
         {
             gC.set_inimigos(&inimigos);
             gC.set_jogadores(&jogadores);
             gC.set_obstaculos(&obstaculos);
+            gC.set_IThread(&IThread);
             criarJogadores();
             criarInimigos();
         }
         Fase::~Fase()
         {
             salvar();
+            IThread->kill();
+            delete IThread;
         }
 
         void Fase::gerenciar_colisoes()
@@ -84,6 +88,8 @@ namespace Estados
                                 )
                     )));
             }
+            IThread = new Inim_Facil_Thread( sf::Vector2f( 100 , 50  ),
+                                            sf::Vector2f(  0 ,  0  ));
         }
         void Fase::criarCenario(std::string caminho)
         {

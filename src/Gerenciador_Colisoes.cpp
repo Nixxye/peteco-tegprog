@@ -51,6 +51,21 @@ namespace Gerenciadores
             }
             inim++;
         }
+    // Gambiarra Master Comec´a Aqui
+        if(*IThread == NULL)
+            return;
+
+        obst = obstaculos->get_primeiro();
+        while (obst != nullptr)
+        {
+            if (colidiu(*IThread, *obst))
+            {
+                    (*IThread)->colidir();
+                    (*obst)->colidir();
+            }
+            obst++;
+        }
+        // Teria que testar com o Jogador tambem...
     }
     int Gerenciador_Colisoes::colidiu(Entidades::Entidade* e1, Entidades::Entidade* e2)
     {

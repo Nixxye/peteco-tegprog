@@ -8,6 +8,7 @@ namespace Estados
         Fase(1)
         {
             criarCenario(ARQUIVO_CENARIO_1);
+            IThread->start();
         }
         FasePrimeira::~FasePrimeira()
         {
@@ -16,6 +17,8 @@ namespace Estados
 
         void FasePrimeira::executar()
         {
+            IThread->lock();
+
             jogadores.executar();
             inimigos.executar();
             gerenciar_colisoes();
@@ -23,6 +26,10 @@ namespace Estados
             jogadores.desenhar();
             inimigos.desenhar();
             obstaculos.desenhar();
+
+            IThread->desenhar();
+            IThread->NovoFrame();
+            IThread->unlock();
         }
     }    
 }

@@ -7,6 +7,7 @@
 #include "../../Listas/ListaEntidades.h"
 #include "../../Gerenciadores/Gerenciador_Colisoes.h"
 #include "../Estado.h"
+#include "../../Threads/Inim_Facil_Thread.h"
 
 #include <iostream>
 #include <sstream>
@@ -24,6 +25,7 @@ namespace Estados
             Listas::ListaEntidades jogadores;
             Listas::ListaEntidades obstaculos;
             Listas::ListaEntidades inimigos;
+            Inim_Facil_Thread* IThread;
             Gerenciadores::Gerenciador_Colisoes gC;
             std::ostringstream buffer;
         public:
