@@ -31,7 +31,9 @@ namespace Estados
         {
             salvar();
             IThread->kill();
-            delete IThread;
+            if(IThread)
+                delete IThread;
+            std::cout << "OI" << std::endl;
         }
 
         void Fase::gerenciar_colisoes()
