@@ -18,7 +18,8 @@ namespace Gerenciadores
         pGrafico = nullptr;
         for (it = lista_observers.begin(); it != lista_observers.end(); it++)
         {
-            //delete *it;
+            if(*it)
+                delete *it;
         }
         lista_observers.clear();
     }

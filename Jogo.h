@@ -17,8 +17,8 @@ private:
     Gerenciadores::Gerenciador_Estados* pEstados;
     Propagandas::GerenciadorPropagandas propagandas;
     // Comentar dps:
-    Observers::ObserverTecla obs1;
-    Observers::ObserverTecla obs2;
+    Observers::ObserverTecla* obs1;
+    Observers::ObserverTecla* obs2;
     
 public:
     Jogo();

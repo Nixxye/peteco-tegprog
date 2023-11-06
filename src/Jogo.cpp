@@ -6,9 +6,13 @@ pGrafico(Gerenciadores::Gerenciador_Grafico::get_instancia()),
 pEventos(Gerenciadores::Gerenciador_Eventos::get_instancia()),
 pEstados(Gerenciadores::Gerenciador_Estados::get_instancia()),
 propagandas(),
-obs1(1),
-obs2(2)
+obs1(NULL),
+obs2(NULL)
 {
+    obs1 = new Observers::ObserverTecla(1);
+    obs2 = new Observers::ObserverTecla(2);
+    if(!obs1 || !obs2 )
+        exit(1);
     Estados::Fases::FasePrimeira* fase1 = new Estados::Fases::FasePrimeira();
     executar();
 }

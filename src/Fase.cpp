@@ -6,6 +6,7 @@
 
 #define ARQUIVO_JOGADOR "jogador.json"
 #define ARQUIVO_INIMIGO "inimigo.json"
+#define ARQUIVO_THREAD "thread.json"
 
 namespace Estados
 {
@@ -33,7 +34,6 @@ namespace Estados
             IThread->kill();
             if(IThread)
                 delete IThread;
-            std::cout << "OI" << std::endl;
         }
 
         void Fase::gerenciar_colisoes()
@@ -90,8 +90,19 @@ namespace Estados
                                 )
                     )));
             }
-            IThread = new Inim_Facil_Thread( sf::Vector2f( 100 , 50  ),
-                                            sf::Vector2f(  0 ,  0  ));
+            arquivo.close();
+            arquivo.open(ARQUIVO_THREAD);
+            json = nlohmann::json::parse(arquivo);
+            auto it = json.begin();
+            IThread = new Inim_Facil_Thread( sf::Vector2f(
+                        (float) ((*it)["posicao"][0]), 
+                        (float) ((*it)["posicao"][1])
+                                ),
+                    sf::Vector2f(
+                        (float) ((*it)["velocidade"][0]),
+                        (float) ((*it)["velocidade"][1])
+                                ));
+            arquivo.close();
         }
         void Fase::criarCenario(std::string caminho)
         {
@@ -181,6 +192,9 @@ namespace Estados
             }
             buffer << "]";
 
+//INIMIGO THREAD SALVANDO
+            IThread->salvar();
+//--------------------------------------
             arquivo_inimigo << buffer.str();
 
             arquivo_inimigo.close();

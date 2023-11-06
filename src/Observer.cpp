@@ -9,7 +9,7 @@ namespace Observers
     }
     Observer::~Observer()
     {
-        pGer_Eventos->remover(this);
+        //pGer_Eventos->remover(this); CAUSANDO SEG FAULT. . .
     }
 
 }
